@@ -23,13 +23,7 @@ export class PasswordStrengthComponent {
   public password: string = '';
   public sections: string[] = ['gray', 'gray', 'gray'];
 
-  hide = signal(true);
-  clickEvent(event: MouseEvent) {
-    this.hide.set(!this.hide);
-    event.stopPropagation();
-  }
-
- getPasswordStrength() {
+ public getPasswordStrength() {
     if (this.password.length === 0) {
       this.sections = ['gray', 'gray', 'gray'];
     } else if (this.password.length < 8) {
